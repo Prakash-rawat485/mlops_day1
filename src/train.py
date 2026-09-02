@@ -21,4 +21,6 @@ rmse=np.sqrt(mean_squared_error(ytest, ypred))
 print("R²:", r2)
 print("RMSE:", rmse)
 
+# Take my trained model and save it as model.pkl.
+
 joblib.dump(model, r"D:\MY Projects (github)\mlops_day1\models\linear_regression_model.pkl")
