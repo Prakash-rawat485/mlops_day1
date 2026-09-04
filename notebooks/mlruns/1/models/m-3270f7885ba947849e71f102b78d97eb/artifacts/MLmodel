@@ -1,0 +1,31 @@
+artifact_path: file:d:/MY Projects (github)/mlops_day1/notebooks/mlruns/1/models/m-3270f7885ba947849e71f102b78d97eb/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.15
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.15.2
+model_id: m-3270f7885ba947849e71f102b78d97eb
+model_size_bytes: 1398496
+model_uuid: m-3270f7885ba947849e71f102b78d97eb
+prompts: null
+run_id: e04ec3d6e797494bacb7af9d9db4f36d
+signature:
+  inputs: '[{"type": "double", "name": "TV", "required": true}, {"type": "double",
+    "name": "Radio", "required": true}, {"type": "double", "name": "Newspaper", "required":
+    true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-09-03 04:42:56.976097'
