@@ -39,10 +39,17 @@ models = {
 
 batch_runs = []
 
+best_model = None
+best_rmse = float("inf")
+
 for name, model in models.items():
     with mlflow.start_run(run_name=name) as run:
         model.fit(xtrain, ytrain)
         rmse = root_mean_squared_error(ytest, model.predict(xtest))
+        if rmse < best_rmse:
+            best_rmse = rmse
+            best_model = model
+    
         
         mlflow.log_param("model_type", name)
         mlflow.log_metric("test_rmse", rmse)
@@ -82,16 +89,10 @@ except Exception:
     print(f"🌟 First Champion assigned: Version {challenger_version}")
 
 
+champion_export_path = os.path.join(MODELS_DIR, "champion_model.pkl")
+joblib.dump(best_model, champion_export_path)
 
-# Load current champion from MLflow Registry
-# champion_model_uri = f"models:/{registered_model_name}@champion"
-# champion_model = mlflow.sklearn.load_model(champion_model_uri)
-
-# Save standalone champion artifact
-# champion_export_path = os.path.join(MODELS_DIR, "champion_model.pkl")
-# joblib.dump(champion_model, champion_export_path)
-
-# print(f"✅ Exported registry champion model to {champion_export_path}")
+print(f"✅ Exported champion model to {champion_export_path}")
 
 
 # model track
