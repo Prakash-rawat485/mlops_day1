@@ -84,14 +84,14 @@ except Exception:
 
 
 # Load current champion from MLflow Registry
-champion_model_uri = f"models:/{registered_model_name}@champion"
-champion_model = mlflow.sklearn.load_model(champion_model_uri)
+# champion_model_uri = f"models:/{registered_model_name}@champion"
+# champion_model = mlflow.sklearn.load_model(champion_model_uri)
 
 # Save standalone champion artifact
-champion_export_path = os.path.join(MODELS_DIR, "champion_model.pkl")
-joblib.dump(champion_model, champion_export_path)
+# champion_export_path = os.path.join(MODELS_DIR, "champion_model.pkl")
+# joblib.dump(champion_model, champion_export_path)
 
-print(f"✅ Exported registry champion model to {champion_export_path}")
+# print(f"✅ Exported registry champion model to {champion_export_path}")
 
 
 # model track
