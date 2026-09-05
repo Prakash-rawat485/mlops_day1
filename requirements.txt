@@ -3,3 +3,6 @@ numpy
 seaborn 
 matplotlib
 scikit-learn
+mlflow
+streamlit
+pytest
