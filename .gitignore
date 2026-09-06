@@ -67,6 +67,3 @@ htmlcov/
 # ==============================
 # Model / Large Generated Files
 # ==============================
-*.pkl
-*.pickle
-*.joblib
