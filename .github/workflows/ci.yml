@@ -33,9 +33,3 @@ jobs:
 
       - name: Verify Docker Image Build
         run: docker build -t streamlit-app:test .
-
-      - name: Trigger CD Pipeline
-         env:
-           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-           gh workflow run cd.yml --ref main
